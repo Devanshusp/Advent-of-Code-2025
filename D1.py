@@ -1,6 +1,6 @@
 # read the input
-# input_file = "advent_of_code/D1_input_test.txt"
-input_file = "advent_of_code/D1_input.txt"
+# input_file = "D1_input_test.txt"
+input_file = "D1_input.txt"
 
 # positions
 limit_pos = 100  # 0-99

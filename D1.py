@@ -26,7 +26,7 @@ with open(input_file) as file:
 
         # calc times lock made contact with pos 0
         count_rot_zero += abs(current_pos) // limit_pos  # count full turns
-        if (_start_pos > 0 and _end_pos < 0) or _end_pos == 0:  # 1st turn across 0 or lands on 0
+        if (_end_pos < 0 < _start_pos) or _end_pos == 0:  # 1st turn across 0 or lands on 0
             count_rot_zero += 1
 
         # save times lock lands on pos 0

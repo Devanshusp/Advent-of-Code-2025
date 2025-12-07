@@ -49,7 +49,6 @@ for is_space, cols in groupby(columns, key=lambda c: all(x == " " for x in c)):
 total_hor = 0
 total_ver = 0
 
-
 for nums_h, nums_v, op in zip(numbers_hor, numbers_ver, operations):
     match op:
         case "*":

@@ -60,6 +60,5 @@ count_fresh_all = 0
 for lo_range, hi_range in fresh_range:
     count_fresh_all += hi_range - lo_range + 1
 
-
 print("Problem 1", count_fresh_given)
 print("Problem 2", count_fresh_all)

@@ -85,22 +85,19 @@ def product_of_three_largest(n_distances: list) -> int:
 
 
 def last_x_product(distances: list) -> int:
-    connected = set()  # node_ids
-    last_product = 0
+    # put each node in a group ("circuit") using union find technique
+    uf = UnionFind(len(nodes))
 
-    # connect all nodes
+    # initially, each item is in its own circuit
+    count_groups = len(nodes)
     for _, node_a, node_b in distances:
-        # skip if both nodes are already in the single giant connection
-        if node_a.id in connected and node_b.id in connected:
-            continue
+        # returns true only when nodes were in different groups before join
+        if uf.union(node_a.id, node_b.id):
+            count_groups -= 1  # one less group
+            if count_groups == 1:
+                return node_a.x * node_b.x  # last x product
 
-        connected.add(node_a.id)
-        connected.add(node_b.id)
-
-        # save the final x product
-        last_product = node_a.x * node_b.x
-
-    return last_product
+    return 0
 
 
 print("Problem 1", product_of_three_largest(distances[:N]))
